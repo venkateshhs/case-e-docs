@@ -5,6 +5,11 @@ The form builder creates reusable case-report forms from sections and fields.
 Forms may be built from scratch, loaded from a saved template, or assembled
 using specialized clinical fields and supported ontology terms.
 
+For the complete Basic/Advanced settings reference, including every constraint,
+field conversion, popup reminder, and copy behavior, see :doc:`field-settings`.
+For worked configuration of conditional visibility, value assignments, and
+calculations, see :doc:`form-logic`.
+
 Design hierarchy
 ----------------
 
@@ -92,6 +97,9 @@ Combine conditions with **AND** when all must match, or **OR** when any may matc
 Test the false-to-true and true-to-false transitions, especially when a hidden
 field already contains data.
 
+The exact navigation, action/match settings, type-specific operators, and
+hidden-source behavior are documented in :ref:`conditional-visibility-detailed`.
+
 Calculations and assignments
 ----------------------------
 
@@ -100,12 +108,19 @@ target based on configured rules; when several rules could match, the first
 matching assignment wins. The builder checks for circular dependencies, but the
 designer must still test missing values, decimals, and conditional inputs.
 
+See :doc:`form-logic` for overwrite and clear policies, first-match priority,
+calculation expressions, non-numeric scoring, blank policies, and target-field
+restrictions.
+
 Popup reminders
 ---------------
 
 Popup rules can show instructions or safety reminders in response to entered
 values. Write messages that tell the user what to verify or do next. A popup is
 decision support, not a substitute for protocol training or clinical judgment.
+
+A reminder can also be displayed below another selected target field. See
+:ref:`popup-reminders-detailed`.
 
 Tables
 ------

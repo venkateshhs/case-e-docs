@@ -21,26 +21,28 @@ source_suffix = ".rst"
 master_doc = "index"
 language = "en"
 
-html_theme = "furo"
+html_theme = "sphinx_rtd_theme"
 html_title = "case-e documentation"
 html_static_path = ["_static"]
 html_css_files = ["custom.css"]
 html_favicon = "_static/case-e-logo.png"
 html_logo = "_static/case-e-logo.png"
 html_theme_options = {
-    "sidebar_hide_name": False,
-    "light_css_variables": {
-        "color-brand-primary": "#087f72",
-        "color-brand-content": "#087f72",
-        "color-admonition-background": "#edf8f5",
-    },
-    "dark_css_variables": {
-        "color-brand-primary": "#67dfca",
-        "color-brand-content": "#67dfca",
-    },
-    "source_repository": "https://github.com/venkateshhs/case-e-docs/",
-    "source_branch": "main",
-    "source_directory": "docs/",
+    "logo_only": False,
+    "prev_next_buttons_location": "bottom",
+    "style_external_links": True,
+    "collapse_navigation": False,
+    "sticky_navigation": True,
+    "navigation_depth": 4,
+    "includehidden": True,
+    "titles_only": False,
+}
+html_context = {
+    "display_github": True,
+    "github_user": "venkateshhs",
+    "github_repo": "case-e-docs",
+    "github_version": "main",
+    "conf_py_path": "/docs/",
 }
 
 copybutton_prompt_text = r"\$ |>>> |\.\.\. "

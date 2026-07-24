@@ -14,6 +14,12 @@ case-e documentation
      <div><span>03</span><b>Collect</b><small>Subjects · forms · files</small></div>
      <div><span>04</span><b>Review</b><small>Dashboard · audit · export</small></div>
    </div>
+   <div class="casee-link-bar">
+     <a href="getting-started.html">Run case-e locally</a>
+     <a href="deployment.html">Host case-e on a server</a>
+     <a href="https://venkateshhs.github.io/case-e-docs/">Hosted documentation</a>
+     <a href="https://github.com/venkateshhs/eCRF">Application source</a>
+   </div>
 
 case-e is a web-based electronic case report form system for defining clinical
 studies and collecting structured participant data. It combines study design,
@@ -90,9 +96,18 @@ shared or production installation.
 
    studies
    form-design
+   field-settings
+   form-logic
    data-collection
    collaboration
    review-export
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Complete reference
+
+   application-reference
+   feature-index
 
 .. toctree::
    :maxdepth: 2

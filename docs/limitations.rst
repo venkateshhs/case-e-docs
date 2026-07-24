@@ -22,6 +22,9 @@ Current product boundaries
   entry save.
 * A local development setup is not a secure multi-user production deployment.
 * Browser file checks do not replace server-side security controls.
+* The SHACL Components tab is disabled in the active form builder.
+* The Analytics screen is currently minimal and should not be described as a
+  validated analysis environment.
 
 Clinical and regulatory validation
 ----------------------------------
