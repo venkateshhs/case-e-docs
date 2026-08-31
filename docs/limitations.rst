@@ -20,8 +20,21 @@ Current product boundaries
   a native ``.xlsx`` workbook.
 * Section-template saving reuses form design; it is not a partial participant
   entry save.
+* **Save Data** persists the complete assigned entry. Collapsing a section or
+  using the remaining-field navigator does not create section-level saves.
+* Compliance deliberately excludes untouched subjects and future visits until
+  the active scope starts; it is an operational completeness measure, not a
+  denominator of all future study data.
+* A deleted-data dropout removes records from the active case-e dataset, not
+  previous exports, backups, DataLad/git-annex remotes, or externally hosted
+  files.
+* Combined-version repeating-table exports are version snapshots; rows are not
+  automatically matched across versions.
 * A local development setup is not a secure multi-user production deployment.
 * Browser file checks do not replace server-side security controls.
+* The SHACL Components tab is disabled in the active form builder.
+* The Analytics screen is currently minimal and should not be described as a
+  validated analysis environment.
 
 Clinical and regulatory validation
 ----------------------------------

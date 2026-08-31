@@ -11,9 +11,26 @@ BIDS
 CRF / eCRF
    Case report form / electronic case report form.
 
+Compliance scope
+   Subjects and visits included in the current operational completeness
+   calculation after data collection has started; untouched subjects and future
+   not-started visits are excluded.
+
+Dominant option
+   Multiple-choice value such as *None* that clears, and cannot coexist with,
+   the field's other selected values.
+
 Draft
    Editable pre-publication study state that is not used for routine data
    collection.
+
+Dropout — data retained
+   Closed subject status that prevents further data changes while retaining
+   existing records for authorized review and export.
+
+Dropout — data deleted
+   Closed subject status after participant records and file references were
+   removed from the active case-e dataset; external copies are unaffected.
 
 Field identifier
    Stable machine-oriented name used to store and export a field.

@@ -32,6 +32,13 @@ Five-minute quickstart
 4. Visit ``http://127.0.0.1:8000/login`` if the browser does not open
    automatically.
 
+   .. figure:: _static/screenshots/local-login.jpg
+      :alt: case-e local login page in a 1280 by 720 browser window
+      :width: 100%
+
+      The local case-e sign-in page. Select **Create account** for a new user or
+      enter an existing username and password. Branding can vary by deployment.
+
 5. For a new local data folder, sign in as ``admin`` with ``Admin123!``, then
    immediately change that password from **User Management → Change Password**.
 

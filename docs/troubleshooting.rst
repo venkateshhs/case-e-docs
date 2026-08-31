@@ -14,6 +14,13 @@ I cannot sign in
   role.
 * Check server time and reverse-proxy behavior if sessions expire immediately.
 
+For **Forgot password?**, confirm that the account has an email address and the
+operator enabled password recovery. An unavailable lookup can mean no recovery
+email is stored. A 503 response indicates the service or mail delivery is not
+configured; 429 indicates that the configured hourly limit was reached. If a
+link is invalid, expired, or superseded by a newer request, start again from the
+login page.
+
 I can sign in but cannot see a study
 ------------------------------------
 
@@ -32,6 +39,9 @@ Confirm all of the following:
 * the form section is assigned to that visit and group in the protocol matrix;
 * the link, if used, has not expired or reached its use limit; and
 * another active lock or conflict is not blocking the entry.
+
+A dropped subject is intentionally read-only. Check the dropout badge/status
+filter and use the audit event to confirm when and why entry was closed.
 
 Save is blocked by validation
 -----------------------------
@@ -70,12 +80,22 @@ group anonymization, and pagination in the source view. Compare subject and
 visit counts before and after export. Remember that analytical exports may omit
 storage-level content included in a full archive.
 
+For a combined-version ZIP, unchanged fields appear once using the latest
+available value; changed fields receive version suffixes. Repeating-table
+versions are snapshots rather than matched historical rows. Confirm the chosen
+version mode and package-content options before reporting a missing column.
+
 A file will not upload
 ----------------------
 
 Check the field's permitted format, configured size, single/multiple setting,
 browser connection, server request limit, storage capacity, and backend logs.
 Client-side acceptance alone does not prove that server storage succeeded.
+
+If case-e says the data was saved but a removed file could not be deleted, the
+form update is already stored and the deletion remains queued. Keep the file
+removed in the form and save the entry again, then verify the uploaded-files
+browser.
 
 The local service will not start
 --------------------------------

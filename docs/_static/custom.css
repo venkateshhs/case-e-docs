@@ -3,35 +3,48 @@
   --casee-mint: #e3f6f1;
 }
 
-.sidebar-brand-text {
-  letter-spacing: -0.02em;
-  font-weight: 750;
+.wy-side-nav-search {
+  background: #087f72;
 }
 
-.sidebar-logo {
-  max-width: 5.5rem;
+.wy-side-nav-search > a img.logo {
+  width: 96px;
+  height: 96px;
+  object-fit: cover;
+  border-radius: 14px;
+  background: #fff;
+  padding: 4px;
 }
 
-.admonition.note {
-  border-color: var(--casee-teal);
+.wy-nav-content {
+  max-width: 1120px;
 }
 
-.admonition.note > .admonition-title {
-  background: var(--casee-mint);
+.wy-menu-vertical a:hover,
+.wy-menu-vertical li.current > a:hover {
+  background: #dff3ee;
   color: #075f56;
 }
 
-.content table.docutils {
+.rst-content .admonition.note {
+  border-color: var(--casee-teal);
+}
+
+.rst-content .admonition.note > .admonition-title {
+  background: var(--casee-teal);
+}
+
+.rst-content table.docutils {
   width: 100%;
 }
 
-.content table.docutils td,
-.content table.docutils th {
+.rst-content table.docutils td,
+.rst-content table.docutils th {
   vertical-align: top;
 }
 
 .hero-copy {
-  border: 1px solid var(--color-background-border);
+  border: 1px solid #d7e2df;
   border-radius: 0.75rem;
   padding: 1.25rem 1.5rem;
   margin: 1.25rem 0 2rem;
@@ -39,7 +52,7 @@
 }
 
 .hero-copy strong {
-  color: var(--color-brand-content);
+  color: var(--casee-teal);
   font-size: 1.08rem;
 }
 
@@ -51,7 +64,7 @@
 }
 
 .workflow-grid > div {
-  border: 1px solid var(--color-background-border);
+  border: 1px solid #d7e2df;
   border-radius: 0.55rem;
   padding: 0.8rem;
 }
@@ -62,13 +75,38 @@
 }
 
 .workflow-grid span {
-  color: var(--color-brand-content);
+  color: var(--casee-teal);
   font-size: 0.72rem;
   font-weight: 800;
 }
 
 .workflow-grid small {
-  color: var(--color-foreground-secondary);
+  color: #68736f;
+}
+
+.casee-link-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin: 0 0 1.5rem;
+}
+
+.casee-link-bar a {
+  display: inline-block;
+  padding: 0.5rem 0.8rem;
+  border: 1px solid #a8d5ca;
+  border-radius: 4px;
+  background: #edf8f5;
+  color: #075f56;
+  font-weight: 600;
+}
+
+.casee-doc-footer {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e1e4e5;
+  color: #68736f;
+  font-size: 0.85rem;
 }
 
 @media (max-width: 720px) {
