@@ -57,6 +57,14 @@ decision. Test empty, minimum, maximum, invalid, Unicode, and pasted values.
 Number settings
 ---------------
 
+.. figure:: _static/screenshots/field-validation-basic.jpg
+   :alt: Basic field settings for a required weight field with numeric range validation
+   :width: 100%
+
+   Basic settings for a required numeric field. This example documents the
+   placeholder, help text, inclusive 20–300 range, and 0.1 step used by the
+   demonstration form.
+
 * **Min value** and **Max value** define inclusive bounds.
 * **Step** defines permitted increments where enforced by the control and
   validator.
@@ -91,12 +99,27 @@ Radio and dropdown fields provide an option editor with:
 * number of options;
 * add and remove controls;
 * ascending/descending sorting; and
-* direct editing of each option label.
+* direct editing of each option label; and
+* move-up/move-down controls for deliberate display ordering.
 
 A radio field can enable **Allow multiple selections**, in which case defaults
 are edited as chips and stored as a list. Dropdowns are single-select in the
 current builder. Removing or renaming an option may affect defaults,
 visibility rules, popup rules, value assignments, and calculation scoring.
+
+For a multiple-selection radio field, one or more options can be marked
+**Dominant**. Selecting a dominant option clears every other selection. Selecting
+a normal option clears any selected dominant option. This is useful for choices
+such as *None*, *Not applicable*, or *Unknown* that must not coexist with a
+positive response. If inconsistent older/imported data contains a dominant
+option alongside other values, case-e normalizes it to the first selected
+dominant option.
+
+Renaming an option updates its dominant-option reference. Reordering options
+preserves the associated defaults and constraints and, by itself, is treated as
+a display-order change rather than an option-membership schema change. Always
+retest conditions, assignments, and scoring after renaming, adding, or deleting
+choice values.
 
 Checkbox settings
 -----------------
@@ -162,6 +185,14 @@ Conditional visibility
 Popup reminder
    Display a message when the current field matches a rule, optionally beneath
    another selected target field too. See :ref:`popup-reminders-detailed`.
+
+.. figure:: _static/screenshots/field-settings-advanced-conditional.jpg
+   :alt: Advanced field settings with conditional visibility and a popup reminder
+   :width: 100%
+
+   The Advanced tab can combine conditional visibility with a reminder on the
+   same field. Here, weight is shown for a selected demographic answer and an
+   outlier reminder appears when the entered value exceeds 200.
 
 Clearing and saving
 -------------------

@@ -29,7 +29,8 @@ Create a study
 
 #. Select **Create study** from the study dashboard.
 #. Enter a clear title, short identifier, description, owner, and protocol
-   details.
+   details. For a new study, step 1 also offers template-only JSON import and
+   **Import Study (Data)** from CSV/Excel.
 #. Define study groups, such as treatment arms, sites, or cohorts.
 #. Configure the subject identifier pattern and starting sequence.
 #. Add visits in protocol order.
@@ -38,6 +39,13 @@ Create a study
 #. Add users and grant the minimum study permissions.
 #. Test the complete workflow with non-production subjects.
 #. Publish the study when the design is approved.
+
+.. figure:: _static/screenshots/create-study-step-1.jpg
+   :alt: first step of the case-e Create Study wizard in a 1280 by 720 browser window
+   :width: 100%
+
+   Step 1 collects study metadata and provides the template and study-data
+   import entry points. The stepper previews the six design stages.
 
 Groups
 ------
@@ -65,6 +73,12 @@ Before publication:
 After subjects exist, use the subject-by-visit matrix to see expected forms and
 completion progress. Search is available for large subject lists.
 
+The matrix also shows enrolled, active, and dropped totals and can filter active,
+retained-dropout, deleted-data-dropout, or all subjects. The study owner or an
+Administrator can record a controlled dropout with data retained or deleted.
+Do not remove a subject or rewrite status fields manually; use the audited
+workflow in :doc:`oversight`.
+
 Visits
 ------
 
@@ -90,6 +104,14 @@ visit. Review the matrix horizontally by visit and vertically by form section.
 Missing assignments can make a form unavailable to data-entry users; excessive
 assignments can create forms that the protocol does not require.
 
+.. figure:: _static/screenshots/visit-schedule-matrix.jpg
+   :alt: protocol matrix assigning two form sections to a baseline visit and demo cohort
+   :width: 100%
+
+   The schedule-of-assessments matrix for the disposable documentation study.
+   Both sections are assigned to the Baseline Visit for the Demo Cohort before
+   publication.
+
 Publish safely
 --------------
 
@@ -110,3 +132,22 @@ For a published study, make the smallest possible revision. Record the reason,
 test it with existing data, and check export column stability. Removing or
 changing a field can make previous values difficult to interpret even if the
 database still retains history.
+
+case-e preserves stable field identifiers for unchanged fields across template
+versions. Reordering the same choice members is treated as a presentation
+change, while added, removed, renamed, or structurally changed fields are
+versioned by combined-version export. Stable identifiers reduce accidental
+column drift but do not remove the need to review every revision and its diff.
+
+Study documents
+---------------
+
+Open **View Study → Documents** to maintain study-level material such as the
+protocol, approval, or data-management plan. Files are distinct from
+subject/visit upload fields.
+
+Authorized attachment managers can queue several files, add an optional
+description to each, and save them together. Existing descriptions can be added
+or edited; deletion requires confirmation. The page exposes each document's
+relative on-disk location, while downloads remain permission controlled. See
+:doc:`administration` for the current permission rules.

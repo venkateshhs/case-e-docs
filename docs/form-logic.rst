@@ -92,6 +92,13 @@ field to a literal value when its conditions match.
 #. Add each source field, operator, comparison value, and optional upper bound.
 #. Select **Add Assignment**, then inspect the saved rule summary.
 
+.. figure:: _static/screenshots/value-assignments-rule.jpg
+   :alt: case-e value assignment editor setting a review category from BMI
+   :width: 100%
+
+   A worked assignment rule: when calculated BMI is greater than 30, case-e
+   writes ``Review required`` to a read-only review-category field.
+
 Assignment target behavior
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -136,6 +143,15 @@ is divided into inputs, expression, and result/scoring.
    map checked and unchecked states.
 #. Choose the blank-input policy.
 #. Review warnings and save the calculation.
+
+.. figure:: _static/screenshots/logic-calculations-bmi.jpg
+   :alt: validated BMI expression in the case-e calculation builder
+   :width: 100%
+
+   The calculation builder validates field symbols and syntax before saving.
+   This example derives BMI from weight and height, targets an existing
+   read-only number field, uses strict blank handling, and rounds to two
+   decimals.
 
 Expression syntax
 ~~~~~~~~~~~~~~~~~

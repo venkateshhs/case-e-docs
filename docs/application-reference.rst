@@ -7,11 +7,23 @@ is the quickest way to find where a function lives.
 Login and account
 -----------------
 
-**Login** authenticates an existing account. **Register** creates an account
-where registration is enabled; an administrator still controls the effective
-role and study access. The dashboard account area shows the signed-in name and
-role and provides logout. **User information** contains profile and password
-management workflows available to the account.
+**Login** authenticates an existing account and provides show/hide password,
+**Forgot password?**, account registration, documentation, source, partner, and
+contact links. **Register** creates an account where registration is enabled;
+an administrator still controls the effective role and study access. The public
+**Contact** page provides the project contact and supporting links.
+
+Password recovery first looks up the username, shows only a masked email hint,
+and asks for confirmation before sending a one-time link. The link opens
+**Choose a new password** and is valid only while the configured reset service
+is enabled and the token has not expired or been used. See
+:ref:`password-recovery-admin` for account and server details.
+
+The dashboard account area shows the signed-in name and role and provides
+logout. **User information** contains profile, password, and, for
+Administrators, user-management workflows. Login and dashboard footers identify
+the application version, build, and build date; a hosted build can link its
+build ID to the corresponding GitHub commit.
 
 Study Management dashboard
 --------------------------
@@ -24,9 +36,12 @@ Open Existing Study
    Lists accessible studies with name/description search, result count, status,
    timestamps, **Add Data**, and **View Study** actions according to permission.
 
-Import Study (Data)
-   Imports a spreadsheet as a new structured study. This workflow maps study,
-   subject, group, visit, and CRF fields and can infer structure before saving.
+.. figure:: _static/screenshots/study-management-dashboard.jpg
+   :alt: case-e Study Management dashboard in a 1280 by 720 browser window
+   :width: 100%
+
+   Study Management after signing in as a Principal Investigator. The two
+   primary paths are creating a study and opening an accessible existing study.
 
 Draft studies display a **DRAFT** marker. Attempting Add Data is blocked until
 setup is published. Opening a draft offers continue/edit, view when permitted,
@@ -37,8 +52,10 @@ Create/Edit Study wizard
 
 Step 1 — Study details
    Enter the schema-driven study metadata. A template-only JSON exported from
-   another installation can be imported here. Creating or editing supports
-   save-draft-and-leave and unsaved-change prompts.
+   another installation can be imported here. During new-study creation, this
+   step also provides **Import Study (Data)** for participant data from CSV or
+   Excel. Creating or editing supports save-draft-and-leave and unsaved-change
+   prompts.
 
 Step 2 — Groups
    Set the group count and complete every required group metadata panel.
@@ -122,9 +139,12 @@ loads the assigned sections, enforces access, and evaluates visibility,
 reminders, value assignments, and calculations. It provides:
 
 * whole-entry **Save Data** and **Clear**;
+* live completed/total/percentage progress and a filterable **Review remaining**
+  navigator;
+* confirmation that visible unchecked checkboxes should be recorded as No;
 * skip-required reason/confirmation workflow;
 * add/edit/copy/delete for repeating table rows;
-* upload or URL files and an uploaded-files browser;
+* upload or URL files, deferred deletion on save, and an uploaded-files browser;
 * import values or selected table rows from a previous visit;
 * spreadsheet data import;
 * single and bulk shared-link creation/management;
@@ -155,17 +175,32 @@ revocation and CSV export. See :doc:`collaboration` for the operating procedure.
 View Study
 ----------
 
+.. figure:: _static/screenshots/study-view-tabs.jpg
+   :alt: case-e View Study page showing management, review, access, audit, and export tabs
+   :width: 100%
+
+   **View Study** brings metadata, compliance, editing, documents, access,
+   collected data, audit logs, and exports into one permission-aware workspace.
+
 Meta-data
    Collapsible Study Data, Groups, Visits, Subject Assignment, per-subject
    assignment, and Template Versions.
+
+Compliance view
+   Shows current-scope recruitment, retention, data completeness, visit/group
+   comparisons, threshold and distribution charts, and skipped-required counts.
+   Its scope begins with subjects and visits that have started. See
+   :doc:`oversight` for the exact calculation.
 
 Edit Study
    Launches each wizard step separately. Authorized users can also permanently
    delete the study from the database and study filesystem.
 
 Documents
-   Lists study attachments, downloads existing files, and uploads new study
-   documents with optional descriptions.
+   Lists study-level attachments and their relative storage paths. Authorized
+   users can download files; managers can upload several pending documents with
+   a separate optional description for each, edit/add descriptions, or delete
+   documents with confirmation.
 
 Study Access
    Lists grants, revokes access, selects an existing user, and grants View, Add
@@ -181,8 +216,11 @@ Audit logs
    exposes raw event details, and opens structured diffs.
 
 Export Options
-   Exports a full or selected JSON template, downloads transfer/archive ZIPs
-   where authorized, and opens the local BIDS dataset location where supported.
+   Exports a full or selected JSON template. An owner or Administrator can open
+   **Download Study** for a standard BIDS ZIP or a custom version/scope/content
+   package, or **Download Study For Merge** for a template-and-CSV transfer
+   bundle. Local installations can open the BIDS dataset location when the
+   operating system supports it. See :doc:`review-export`.
 
 View Data dashboard
 -------------------
@@ -204,28 +242,42 @@ event metadata for authorized review.
 Import and merge existing data
 ------------------------------
 
-The Import Data workflow accepts a case-e transfer bundle or a subject-focused
-spreadsheet import. Bundle import displays an import summary and template
-comparison, then permits all-subject or selected-subject scope. When incoming
-and existing values conflict, reviewers can choose incoming or existing per
-item, filter by subject, or apply one decision to all.
+The new-study **Import Study (Data)** action is located in step 1 of **Create
+Study**, beside **Import Study Template**. It accepts CSV/XLSX/XLS and maps
+study, subject, group, visit, and CRF data to create structure before importing
+entries.
+
+.. figure:: _static/screenshots/import-study-data.jpg
+   :alt: case-e Import Study Data screen in a 1280 by 720 browser window
+   :width: 100%
+
+   The initial import screen accepts the study-data file and an optional field
+   schema, then maps source columns or fixed values to study metadata.
+
+The existing-study **Import Data** workflow accepts a case-e transfer bundle or
+a subject-focused spreadsheet import. Bundle import displays an import summary
+and template comparison, then permits all-subject or selected-subject scope.
+When incoming and existing values conflict, reviewers can choose incoming or
+existing per item, filter by subject, or apply one decision to all.
 
 Subject-focused import selects the target subject, visit, and group; uploads the
 source; selects a source row; previews the fields to import; and saves only after
 review.
 
-Hosted documentation and application links
-------------------------------------------
+Documentation, application, and contact links
+---------------------------------------------
 
-The documentation home page displays four permanent links:
+The documentation home page provides permanent links to:
 
+* **Use hosted case-e** — :doc:`hosted-access`, which explains account creation,
+  the initial Investigator role, collaboration contact, and study-design access;
 * **Run case-e locally** — :doc:`getting-started`;
 * **Host case-e on a server** — :doc:`deployment`;
-* **Hosted documentation** — the expected GitHub Pages address,
-  ``https://venkateshhs.github.io/case-e-docs/``; and
+* **Complete feature index** — :doc:`feature-index`;
+* **Contact & collaboration** — :doc:`support`; and
 * **Application source** — the GitHub source repository.
 
-The hosted-documentation link becomes live after the separate docs repository
-is pushed and GitHub Pages is enabled. No public hosted application URL is
-stored in the current source; production operators must replace example domains
-with their deployment's real HTTPS URL.
+The hosted guide links to ``https://ecrf.inm7.de/login`` only after explaining
+registration and permissions. For collaboration, institutional use, or
+hosted-access questions, contact Prof. Jürgen Dukart using the details in
+:doc:`hosted-access` or :doc:`support`.

@@ -15,9 +15,11 @@ case-e documentation
      <div><span>04</span><b>Review</b><small>Dashboard · audit · export</small></div>
    </div>
    <div class="casee-link-bar">
+     <a href="hosted-access.html">Use hosted case-e</a>
      <a href="getting-started.html">Run case-e locally</a>
      <a href="deployment.html">Host case-e on a server</a>
-     <a href="https://venkateshhs.github.io/case-e-docs/">Hosted documentation</a>
+     <a href="feature-index.html">Complete feature index</a>
+     <a href="support.html">Contact &amp; collaboration</a>
      <a href="https://github.com/venkateshhs/eCRF">Application source</a>
    </div>
 
@@ -46,6 +48,7 @@ Data quality
 
 Data collection
    Subject-by-visit selection matrix, completion status and percentages,
+   guided review of remaining fields, explicit checkbox confirmation,
    spreadsheet import, previous-visit copying, repeating tables, file upload,
    conflict resolution, and unsaved-change protection.
 
@@ -55,9 +58,9 @@ Collaboration
    revocation; and CSV link export.
 
 Review and export
-   Version-aware data tables, filters, sorting, pagination, audit history and
-   diffs, CSV/Excel data export, JSON template export, and ZIP transfer or
-   archive bundles.
+   Version-aware data tables, filters, sorting, pagination, compliance charts,
+   audited subject dropout, audit history and diffs, CSV/Excel extracts, and
+   configurable BIDS/ZIP study packages including combined-version exports.
 
 Deployment
    Local SQLite/filesystem use, packaged desktop builds, Docker Compose, or a
@@ -69,10 +72,18 @@ Deployment
    templates, and deployment scripts. Screens marked as unfinished by the
    application are identified in :doc:`limitations`.
 
+.. important::
+
+   **AI-generation disclosure:** This documentation site was generated entirely
+   by ChatGPT. This statement is provided expressly for transparency and legal
+   attribution. See :ref:`ai-generation-disclosure` for the complete notice,
+   authorship, maintenance, and contact information.
+
 Start here
 ----------
 
-New users should begin with :doc:`getting-started`, then follow
+To use the existing INM-7 service, begin with :doc:`hosted-access`. To install
+case-e on your own computer, begin with :doc:`getting-started`. Continue with
 :doc:`studies` and :doc:`form-design`. Administrators should also read
 :doc:`administration`, :doc:`deployment`, and :doc:`operations` before a
 shared or production installation.
@@ -81,6 +92,7 @@ shared or production installation.
    :maxdepth: 2
    :caption: Get started
 
+   hosted-access
    getting-started
    deployment
 
@@ -100,6 +112,7 @@ shared or production installation.
    form-logic
    data-collection
    collaboration
+   oversight
    review-export
 
 .. toctree::
@@ -117,3 +130,9 @@ shared or production installation.
    troubleshooting
    limitations
    glossary
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Project information
+
+   support

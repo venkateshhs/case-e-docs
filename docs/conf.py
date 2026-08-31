@@ -3,7 +3,8 @@ from __future__ import annotations
 from datetime import date
 
 project = "case-e"
-author = "case-e contributors"
+author = "Venkatesh Hariharapura Shivashankar"
+maintainer = "Venkatesh Hariharapura Shivashankar"
 copyright = f"{date.today().year}, {author}"
 release = "1.0"
 
@@ -23,6 +24,10 @@ language = "en"
 
 html_theme = "sphinx_rtd_theme"
 html_title = "case-e documentation"
+html_meta = {
+    "author": author,
+    "description": "Complete user, administration, and deployment documentation for case-e.",
+}
 html_static_path = ["_static"]
 html_css_files = ["custom.css"]
 html_favicon = "_static/case-e-logo.png"

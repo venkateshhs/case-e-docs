@@ -29,6 +29,14 @@ Field
 Supported field types
 ---------------------
 
+.. figure:: _static/screenshots/form-builder-standard-fields.jpg
+   :alt: case-e form builder showing the standard clinical section library
+   :width: 100%
+
+   The standard-field library groups reusable clinical concepts by section.
+   Select a section, choose only the required properties, and take them over
+   into the form.
+
 Text
    Single-line text with length, pattern, transformation, default, help text,
    required, and read-only options.
@@ -61,6 +69,14 @@ Slider / Likert
 
 Table
    Repeating row data with defined columns, validation, and row-level editing.
+
+.. figure:: _static/screenshots/form-builder-custom-fields.jpg
+   :alt: case-e form builder showing all custom field types beside a form
+   :width: 100%
+
+   The custom-field palette provides text, narrative, number, checkbox, radio,
+   dropdown, date, time, file, slider, and table controls. New fields are added
+   to the active section and can then be renamed and configured.
 
 Common field settings
 ---------------------
@@ -144,6 +160,15 @@ starting point, not automatic protocol validation.
 
 Form design checklist
 ---------------------
+
+.. figure:: _static/screenshots/form-builder-complete-demo.jpg
+   :alt: completed demonstration form with demographic and clinical measurement sections
+   :width: 100%
+
+   A completed demonstration form with standard demographic fields, validated
+   measurements, a calculated BMI, and a value-assignment target. The toolbar
+   exposes rearrangement, calculations, assignments, draft saving, and protocol
+   scheduling.
 
 * Keep one concept per field.
 * Use coded choices instead of free text where the protocol defines a list.
