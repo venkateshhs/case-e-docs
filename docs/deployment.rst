@@ -112,51 +112,19 @@ administration without an explicit password.
 
 .. _hosted-password-reset:
 
-Configure email password recovery
----------------------------------
+Email password recovery is disabled
+-----------------------------------
 
-Self-service password recovery is disabled by default. Configure it only after
-the public HTTPS URL and mail relay have been tested. The repository provides
-``deploy/password-reset.env.example`` as a complete starting reference.
+Self-service email password recovery is temporarily unavailable. Keep it
+disabled in hosted environments:
 
 .. code-block:: shell
 
-   ECRF_PASSWORD_RESET_ENABLED=1
-   ECRF_FRONTEND_BASE_URL=https://ecrf.example.org
-   ECRF_SMTP_HOST=smtp.example.org
-   ECRF_SMTP_PORT=587
-   ECRF_SMTP_USERNAME=casee@example.org
-   ECRF_SMTP_PASSWORD=replace-with-a-secret
-   ECRF_SMTP_STARTTLS=1
-   ECRF_SMTP_SSL=0
-   ECRF_MAIL_FROM=casee@example.org
+   ECRF_PASSWORD_RESET_ENABLED=0
 
-``ECRF_FRONTEND_BASE_URL`` must be the browser-visible origin without a trailing
-path. Emailed links are built as
-``<base-url>/reset-password?token=<one-time-token>``. Set exactly one of
-``ECRF_SMTP_STARTTLS`` and ``ECRF_SMTP_SSL``; authenticated SMTP requires both
-username and password, while an approved relay can leave both empty.
-
-Additional controls are:
-
-.. list-table::
-   :header-rows: 1
-   :widths: 65 35
-
-   * - Variable
-     - Default
-   * - ``ECRF_SMTP_TIMEOUT_SECONDS``
-     - ``15``
-   * - ``ECRF_PASSWORD_RESET_TTL_MINUTES``
-     - ``20``
-   * - ``ECRF_PASSWORD_RESET_CONFIRMATION_TTL_MINUTES``
-     - ``10``
-   * - ``ECRF_PASSWORD_RESET_MAX_PER_USER_HOUR``
-     - ``3``
-   * - ``ECRF_PASSWORD_RESET_MAX_LOOKUPS_PER_IP_HOUR``
-     - ``10``
-   * - ``ECRF_TRUST_PROXY_HEADERS``
-     - ``1`` behind supplied Apache
+The variable can also be omitted because its application default is disabled.
+Users must contact an Administrator for a temporary password. SMTP variables
+may still be configured for shared-link email delivery.
 
 Restart case-e after changing the environment. Startup validation rejects an
 enabled reset service with a missing frontend URL, SMTP host, sender, invalid
