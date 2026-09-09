@@ -14,12 +14,9 @@ I cannot sign in
   role.
 * Check server time and reverse-proxy behavior if sessions expire immediately.
 
-For **Forgot password?**, confirm that the account has an email address and the
-operator enabled password recovery. An unavailable lookup can mean no recovery
-email is stored. A 503 response indicates the service or mail delivery is not
-configured; 429 indicates that the configured hourly limit was reached. If a
-link is invalid, expired, or superseded by a newer request, start again from the
-login page.
+Self-service password recovery is temporarily disabled. Ask an Administrator to
+issue a temporary password through User Management, then change it immediately
+at the next login.
 
 I can sign in but cannot see a study
 ------------------------------------

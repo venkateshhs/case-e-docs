@@ -97,7 +97,7 @@ Review, administration, and operations
 Capability                              Documentation
 ======================================= =====================================
 Platform roles and user management      :doc:`administration`
-Temporary passwords/password recovery   :doc:`administration`
+Temporary passwords/admin reset          :doc:`administration`
 View/Add/Edit study grants              :doc:`administration`
 Compliance and dropout review           :doc:`oversight`
 View Data, filters, sorting, pagination :doc:`review-export`

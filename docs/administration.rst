@@ -107,27 +107,15 @@ team member joins or leaves.
 Password recovery
 -----------------
 
-When hosted password recovery is enabled, the login page offers **Forgot
-password?**:
+Self-service email password recovery is temporarily disabled. The login page
+does not offer **Forgot password?**, and reset URLs redirect to login. A user who
+cannot sign in must contact an Administrator, who can issue a temporary password
+through User Management. The user must change that temporary password at the
+next login.
 
-#. The user enters their username.
-#. case-e returns only a masked email address and asks the user to confirm it.
-#. After confirmation, case-e emails a one-time reset link.
-#. The user enters and confirms a new password of at least eight characters,
-   including a number and one of ``!@#$%^&*``.
-#. A successful reset clears the temporary-password requirement, consumes all
-   outstanding reset tokens for the account, revokes the account's existing
-   sessions, and writes a system audit event.
-
-The default emailed reset link expires after 20 minutes and the username/email
-confirmation after 10 minutes. By default, case-e permits three reset emails per
-user per hour and ten username lookups per requesting IP per hour. A newer reset
-request invalidates unused earlier reset links. Accounts without a stored email
-cannot use self-service recovery and must contact an Administrator.
-
-The feature is disabled until the operator configures SMTP and the public
-frontend URL. Do not enable it with example values. See
-:ref:`hosted-password-reset` for deployment settings.
+Keep ``ECRF_PASSWORD_RESET_ENABLED=0`` or leave it unset on hosted systems. SMTP
+configuration can still be used independently for shared-link delivery. See
+:ref:`hosted-password-reset` for deployment guidance.
 
 Security responsibilities
 -------------------------

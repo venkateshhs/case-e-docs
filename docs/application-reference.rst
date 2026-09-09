@@ -8,19 +8,18 @@ Login and account
 -----------------
 
 **Login** authenticates an existing account and provides show/hide password,
-**Forgot password?**, account registration, documentation, source, partner, and
-contact links. **Register** creates an account where registration is enabled;
+account registration, documentation, source, partner, and contact links.
+Self-service password recovery is temporarily unavailable. **Register** creates
+an account where registration is enabled;
 an administrator still controls the effective role and study access. The public
 **Contact** page provides the project contact and supporting links.
 
-Password recovery first looks up the username, shows only a masked email hint,
-and asks for confirmation before sending a one-time link. The link opens
-**Choose a new password** and is valid only while the configured reset service
-is enabled and the token has not expired or been used. See
-:ref:`password-recovery-admin` for account and server details.
+Users who forget their password must currently contact an Administrator. See
+:ref:`password-recovery-admin` for account-management details.
 
-The dashboard account area shows the signed-in name and role and provides
-logout. **User information** contains profile, password, and, for
+The dashboard account area provides a permanent link to the `case-e
+documentation <https://case-e.readthedocs.io/en/latest/>`_, shows the signed-in
+name and role, and provides logout. **User information** contains profile, password, and, for
 Administrators, user-management workflows. Login and dashboard footers identify
 the application version, build, and build date; a hosted build can link its
 build ID to the corresponding GitHub commit.
